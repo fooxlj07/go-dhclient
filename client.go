@@ -304,7 +304,7 @@ func (client *Client) newPacket(msgType layers.DHCPMsgType, options []Option) *l
 			Length: uint8(len(option.Data)),
 		})
 	}
-
+	packet.Flags = uint16(0x8000)
 	return &packet
 }
 
